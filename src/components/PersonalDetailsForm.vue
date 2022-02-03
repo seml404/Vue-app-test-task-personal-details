@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
     <form action="#" class="form" @submit.prevent="handleSubmit">
-      <div class="form-section">
+      <div class="section-part section-part-personal">
         <h2 class="section-title">Персональные данные</h2>
         <div class="input-container">
           <p class="input-title">Имя</p>
@@ -9,10 +9,10 @@
         </div>
         <div class="input-container">
           <p class="input-title">Возраст</p>
-          <input type="text" v-model="personAge" />
+          <input type="number" v-model="personAge" />
         </div>
       </div>
-      <div class="form-section">
+      <div class="section-part">
         <div class="title-container">
           <h2 class="section-title">Дети (макс. 5)</h2>
           <button
@@ -21,7 +21,7 @@
             v-if="showBtnAdd"
             @click="handleAddKid"
           >
-            <img src="#" alt="plus-sign" /> Добавить ребенка
+            <span>+</span> Добавить ребенка
           </button>
         </div>
         <div class="kids-list-container" v-if="personKids.length > 0">
@@ -71,6 +71,7 @@ export default {
         age: this.personAge,
         kids: this.personKids,
       });
+      this.$router.push("/saved-details");
     },
     handleKidDetailsChange(value) {
       console.log(this.personKids[value.idx]);

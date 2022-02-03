@@ -4,7 +4,11 @@
       <header class="header">
         <div class="wrapper">
           <div class="logo-container">
-            <img src="#" alt="logo" class="logo-img" />
+            <img
+              :src="require('./assets/logo.png')"
+              alt="logo"
+              class="logo-img"
+            />
           </div>
           <div class="header-nav-menu">
             <router-link to="/">Форма</router-link>

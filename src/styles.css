@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "Montserrat_bold";
+  src: url("./assets/fonts/Montserrat/Montserrat-Bold.ttf");
+  src: local("./assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+    url("./assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat_medium";
+  src: url("./assets/fonts/Montserrat/Montserrat-Medium.ttf");
+  src: local("./assets/fonts/Montserrat/Montserrat-Medium.ttf"),
+    url("./assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+  src: local("./assets/fonts/Montserrat/Montserrat-Regular.ttf"),
+    url("./assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*Обнуление*/
 *,
 p {
@@ -5,16 +31,17 @@ p {
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", "Times New Roman", Times, serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 html,
 body,
 .app {
   height: 100vh;
-  font-family: "Montserrat", "Times New Roman", Times, serif;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
+
   color: #111111;
 }
 
@@ -27,12 +54,24 @@ ul,
 li {
   margin: 0;
 }
+button {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 .content {
   flex: 1 0 auto;
 }
 
-/*  */
+/* general styles */
 
 .app {
   display: flex;
@@ -56,25 +95,49 @@ li {
   box-shadow: 0px 1px 0px rgba(17, 17, 17, 0.1);
 }
 
-.logo-container {
-  position: absolute;
-  left: 0;
+.header a {
+  color: rgba(17, 17, 17, 0.48);
 }
 
 .header-nav-menu {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 24px;
 }
 
-/* footer */
-.footer {
-  flex: 0 0 auto;
-  background: #fafafa;
-  text-align: center;
+.logo-container {
+  position: absolute;
+  left: 0;
 }
 
 /* section main */
+
+.btn-add {
+  width: 204px;
+  height: 44px;
+  border-radius: 100px;
+  color: #01a7fd;
+  border: 2px solid #01a7fd;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-add span {
+  font-size: 34px;
+  color: #01a7fd;
+  font-weight: 500;
+  margin-right: 7.51px;
+}
+
+.btn-save {
+  background: #01a7fd;
+  border-radius: 100px;
+  width: 118px;
+  height: 44px;
+  color: #ffff;
+}
 
 .section-main > .wrapper {
   max-width: 616px;
@@ -85,6 +148,13 @@ li {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+}
+
+.section-part {
+  padding-bottom: 30px;
+}
+
+.section-part-personal .section-title {
   padding-bottom: 20px;
 }
 
@@ -97,6 +167,23 @@ li {
   margin-bottom: 10px;
   border: 1px solid #f1f1f1;
   border-radius: 4px;
+  position: relative;
+}
+
+.input-container .input-title {
+  position: absolute;
+  z-index: 2;
+}
+
+.input-container input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 26px;
+  padding-left: 16px;
 }
 
 .input-title {
@@ -112,4 +199,65 @@ li {
   width: 100%;
   max-width: 260px;
   margin-right: 18px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 11px;
+}
+
+/* kid details */
+
+.btn-delete {
+  background: none;
+  color: #01a7fd;
+  line-height: 24px;
+}
+.kid-details-container {
+  margin-bottom: 10px;
+}
+
+.kid-details-container:last-child {
+  margin-bottom: 0px;
+}
+
+.kid-details-container .input-container {
+  margin-bottom: 0;
+}
+
+.saved-details-container .section-part-personal {
+  padding-bottom: 60px;
+}
+
+.section-part-kids {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-part-kids .section-title {
+  padding-bottom: 20px;
+}
+
+.saved-details-kid {
+  padding: 10px 20px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.text-main {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* footer */
+.footer {
+  flex: 0 0 auto;
+  background: #fafafa;
+  text-align: center;
 }

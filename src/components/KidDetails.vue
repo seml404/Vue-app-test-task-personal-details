@@ -6,7 +6,7 @@
     </div>
     <div class="input-container">
       <p class="input-title">Возраст</p>
-      <input type="text" v-model="kidAge" @change="handleKidDetailsChange" />
+      <input type="number" v-model="kidAge" @change="handleKidDetailsChange" />
     </div>
     <button type="button" class="btn btn-delete" @click="handleRemove">
       Удалить
