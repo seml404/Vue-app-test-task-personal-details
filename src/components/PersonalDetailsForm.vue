@@ -71,7 +71,7 @@ export default {
         age: this.personAge,
         kids: this.personKids,
       });
-      this.$router.push("/saved-details");
+      // this.$router.push("/saved-details");
     },
     handleKidDetailsChange(value) {
       console.log(this.personKids[value.idx]);
