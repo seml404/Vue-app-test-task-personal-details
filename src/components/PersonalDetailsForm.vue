@@ -62,9 +62,12 @@ export default {
   },
   methods: {
     ...mapMutations(["setPersonDetails"]),
+
+    // функция добавления строки для ввода информации о ребенке
     handleAddKid() {
       this.personKids.push({ id: Math.random(), kidName: "", kidAge: "" });
     },
+    // функция обработки сохранения введенной информации; возможно раскоментировать нижнюю строчку кода для автоматического перехода на страницу с сохраненными данными
     handleSubmit() {
       this.setPersonDetails({
         name: this.personName,
@@ -73,6 +76,7 @@ export default {
       });
       // this.$router.push("/saved-details");
     },
+    // функция обработки ввода информации в компоненте ввода данных о детях
     handleKidDetailsChange(value) {
       console.log(this.personKids[value.idx]);
       this.personKids[value.idx] = {
@@ -81,6 +85,7 @@ export default {
         kidAge: value.age,
       };
     },
+    // функция обработки удаления блока с информацией об отдельном ребенке
     handleRemoveKid(idx) {
       this.personKids = this.personKids.filter((kid) => kid.id !== idx);
     },

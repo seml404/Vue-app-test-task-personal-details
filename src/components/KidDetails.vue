@@ -24,6 +24,7 @@ export default {
   },
   props: ["kidDetails", "idx"],
   methods: {
+    // функция обработки ввода информации о детях
     handleKidDetailsChange() {
       this.$emit("kidDetailsChange", {
         idx: this.idx,
@@ -31,6 +32,7 @@ export default {
         age: this.kidAge,
       });
     },
+    // функция обработки нажатия кнопки "Удалить"
     handleRemove() {
       this.$emit("removeKid", this.kidDetails.id);
     },
