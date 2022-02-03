@@ -69,6 +69,11 @@ export default {
     },
     // функция обработки сохранения введенной информации; возможно раскоментировать нижнюю строчку кода для автоматического перехода на страницу с сохраненными данными
     handleSubmit() {
+      // удаление незаполненных блоков для ввода информации о ребенке
+      this.personKids = this.personKids.filter((item) => {
+        return item.kidName && item.kidAge;
+      });
+      // направление данных в store для последующего отображения
       this.setPersonDetails({
         name: this.personName,
         age: this.personAge,
